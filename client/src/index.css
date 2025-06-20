@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(227, 83%, 73%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* WebLocker Pro Custom Colors */
+  --weblocker-primary: hsl(227, 83%, 73%);
+  --weblocker-secondary: hsl(273, 43%, 55%);
+  --weblocker-light: hsl(210, 40%, 98%);
+  --weblocker-medium: hsl(214, 32%, 91%);
+  --weblocker-dark: hsl(210, 29%, 24%);
+  --weblocker-gray: hsl(208, 12%, 53%);
+  --weblocker-lightgray: hsl(208, 7%, 63%);
+  --weblocker-success: hsl(142, 51%, 45%);
+  --weblocker-successlight: hsl(142, 52%, 86%);
+  --weblocker-error: hsl(358, 62%, 52%);
+  --weblocker-errorlight: hsl(358, 60%, 91%);
+  --weblocker-warning: hsl(30, 82%, 43%);
+  --weblocker-warninglight: hsl(50, 100%, 92%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(227, 83%, 73%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+/* WebLocker Pro Specific Styles */
+.weblocker-brand-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.weblocker-bg-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.weblocker-card-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.weblocker-section-gradient {
+  background: linear-gradient(135deg, hsl(210, 40%, 98%) 0%, hsl(214, 32%, 91%) 100%);
+}
+
+.weblocker-btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.weblocker-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.weblocker-btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.weblocker-btn-primary:hover::before {
+  left: 100%;
+}
+
+.weblocker-btn-secondary {
+  background: linear-gradient(135deg, #4fd1c5 0%, #319795 100%);
+}
+
+.weblocker-btn-danger {
+  background: linear-gradient(135deg, #fc8181 0%, #e53e3e 100%);
+}
+
+.weblocker-timer-gradient {
+  background: linear-gradient(135deg, hsl(50, 100%, 92%) 0%, hsl(48, 84%, 78%) 100%);
+  border: 1px solid rgba(234, 179, 8, 0.2);
+  box-shadow: 0 2px 4px rgba(234, 179, 8, 0.1);
+  color: var(--weblocker-warning);
+}
+
+.weblocker-overlay-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #667eea 100%);
+}
+
+.weblocker-loading::after {
+  content: '';
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: weblocker-spin 1s linear infinite;
+  display: inline-block;
+  margin-left: 8px;
+}
+
+@keyframes weblocker-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes weblocker-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.weblocker-shake {
+  animation: weblocker-shake 0.5s ease-in-out;
+}
+
+.weblocker-fade-in {
+  animation: weblocker-fadeIn 0.3s ease-in-out;
+}
+
+@keyframes weblocker-fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.weblocker-scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(214, 20%, 82%) hsl(220, 13%, 95%);
+}
+
+.weblocker-scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.weblocker-scrollbar-thin::-webkit-scrollbar-track {
+  background: hsl(220, 13%, 95%);
+  border-radius: 3px;
+}
+
+.weblocker-scrollbar-thin::-webkit-scrollbar-thumb {
+  background: hsl(214, 20%, 82%);
+  border-radius: 3px;
+}
+
+.weblocker-scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: var(--weblocker-lightgray);
+}
